@@ -15,7 +15,7 @@ export class Drawer extends Component {
             <MUIDrawer variant="permanent" className="sidebar-drawer">
                 <h2 style={{color:'#8c000a', marginLeft:'20px', fontWeight:900}}>Uberfoods</h2>
                 <List>
-                    {ResMenuItems.map((menu,index)=>(
+                    {ResMenuItems[0].map((menu,index)=>(
                         <Link to={menu.url} style={{textDecoration:'none'}}>
                             <ListItem button key={menu}>
                                 <ListItemIcon>{menu.icon}</ListItemIcon>
