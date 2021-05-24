@@ -13,13 +13,13 @@ export class Drawer extends Component {
     render() {
         return (
             <MUIDrawer variant="permanent" className="sidebar-drawer">
-                <h2 style={{color:'#8c000a', marginLeft:'20px'}}>Uberfoods</h2>
+                <h2 style={{color:'#8c000a', marginLeft:'20px', fontWeight:900}}>Uberfoods</h2>
                 <List>
                     {ResMenuItems.map((menu,index)=>(
                         <Link to={menu.url} style={{textDecoration:'none'}}>
                             <ListItem button key={menu}>
                                 <ListItemIcon>{menu.icon}</ListItemIcon>
-                                <ListItemText primary={menu.title}/>
+                                <ListItemText primary={menu.title} style={{color:'#211829'}}/>
                             </ListItem>
                         </Link>
                     ))}

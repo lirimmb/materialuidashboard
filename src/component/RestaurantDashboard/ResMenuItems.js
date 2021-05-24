@@ -22,8 +22,8 @@ export const ResMenuItems=[
         icon:<EqualizerIcon/>
     },
     {
-        title: 'Notification',
-        url:'resNotification',
+        title: 'Notifications',
+        url:'resNotifications',
         icon:<NotificationsIcon/>
     },
     {
