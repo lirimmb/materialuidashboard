@@ -1,12 +1,9 @@
 import './App.css';
-import Drawer from './component/RestaurantDashboard/Drawer';
-
+import RestaurantDashboard from './component/RestaurantDashboard/RestaurantDashboard';
 
 function App() {
   return (
-    <div className="App">
-      <Drawer/>
-    </div>
+      <RestaurantDashboard/>
   );
 }
 
