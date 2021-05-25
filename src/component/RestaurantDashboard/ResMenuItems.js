@@ -4,6 +4,8 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
+import Badge from '@material-ui/core/Badge';
+
 
 export const ResMenuItems=[
     [
@@ -26,7 +28,7 @@ export const ResMenuItems=[
     {
         title: 'Notifications',
         url:'resNotifications',
-        icon:<NotificationsIcon/>
+        icon:<Badge color="secondary" badgeContent={5}><NotificationsIcon/></Badge>
     },
     {
         title: 'Profile',
