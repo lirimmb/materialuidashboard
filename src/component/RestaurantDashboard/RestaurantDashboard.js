@@ -6,22 +6,17 @@ import Restaurants from './RestaurantPage/Restaurants';
 import Stats from './StatisticsPage/Stats';
 import Notifications from './NotificationsPage/Notifications'
 import Profile from './ProfilePage/Profile';
-import { Grid } from '@material-ui/core';
-
-
-
+import './Restaurant.css'
 
 export class RestaurantDashboard extends Component {
     render() {
         return (
             <Router>
-                <Grid 
-                    container
-                >
-                    <Grid item xs={2}>
+                <div className="mainSection">
+                    <div className="drawer-container">
                         <Drawer/>
-                    </Grid>
-                    <Grid item xs={10}>
+                    </div>
+                    <div className="left-content-container">
                         <Switch>
                             <Route path="/resDashboard" component={DashboardPage}/>
                             <Route path="/resRestaurants" component={Restaurants}/>
@@ -29,8 +24,9 @@ export class RestaurantDashboard extends Component {
                             <Route path="/resNotifications" component={Notifications}/>
                             <Route path="/resProfile" component={Profile}/>
                         </Switch>
-                    </Grid>
-                </Grid>
+                    </div>
+                </div>
+                        
             </Router>
         )   
     }

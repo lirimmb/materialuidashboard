@@ -1,7 +1,7 @@
 import './App.css';
 import {useState} from 'react';
 import RestaurantDashboard from './component/RestaurantDashboard/RestaurantDashboard';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route, Switch, Redirect} from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 
 function App() {
@@ -11,9 +11,7 @@ function App() {
   return (
     <Router>
       <Route path="/" exact>
-        <Link path="/resDashboard">
-          <button onClick={()=>{setIsAuth(true)}}>Login</button>
-        </Link>
+            <button onClick={()=>{setIsAuth(true)}}>Log in</button>      
       </Route>
       
       <ProtectedRoute 

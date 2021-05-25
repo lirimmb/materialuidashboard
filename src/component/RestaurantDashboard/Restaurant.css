@@ -1,0 +1,24 @@
+.mainSection{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+.drawer-container{
+    width: 14%;
+}
+
+.left-content-container{
+    width: 86%;
+}
+
+.restaurants-box{
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 75%;
+    margin: 10px;
+    height: 35px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
