@@ -11,9 +11,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-
-
-
 export class Restaurants extends Component {
     state={
         restaurants:[
@@ -38,45 +35,32 @@ export class Restaurants extends Component {
     render() {
         return (
             <div>
-                {/*this.state.restaurants.map((res)=>(
-                    <Box p={1} my={0.5} className="restaurants-box">
-                        <Avatar alt="Restaurant" src={ResIMG} />
-                        <Typography><strong>{res.restaurantName}</strong></Typography>
-                        <Typography>{res.dateCreated}</Typography>
-                        <Box>
-                            <DeleteForeverIcon style={{color: '#dc004e'}}/>
-                            <MoreVertOutlinedIcon/>
-                        </Box>
-                    </Box>
-                ))*/}
-
-<TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>#</TableCell>
-            <TableCell >Restaurant Name</TableCell>
-            <TableCell >Added Date</TableCell>
-            <TableCell >Action</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-            {this.state.restaurants.map((res)=>(
-                <TableRow>
-                <TableCell ><Avatar alt="Restaurant" src={ResIMG} /></TableCell>
-                <TableCell><strong>{res.restaurantName}</strong></TableCell>
-                <TableCell>{res.dateCreated}</TableCell>
-                <TableCell >
-                    <DeleteForeverIcon style={{color: '#dc004e'}}/>
-                    <MoreVertOutlinedIcon/> 
-                </TableCell>
-                </TableRow>
-            ))}
-
-
-        </TableBody>
-      </Table>
-    </TableContainer>
+                <h2 style={{color:'#8c000a', fontWeight:900}}>Restaurants</h2>
+                <TableContainer component={Paper}>
+                    <Table aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>#</TableCell>
+                                <TableCell >Restaurant Name</TableCell>
+                                <TableCell >Added Date</TableCell>
+                                <TableCell >Action</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {this.state.restaurants.map((res) => (
+                                <TableRow>
+                                    <TableCell ><Avatar alt="Restaurant" src={ResIMG} /></TableCell>
+                                    <TableCell><strong>{res.restaurantName}</strong></TableCell>
+                                    <TableCell><strong>{res.dateCreated}</strong></TableCell>
+                                    <TableCell >
+                                        <DeleteForeverIcon style={{ color: '#dc004e' }} />
+                                        <MoreVertOutlinedIcon />
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </div>
         )
     }
