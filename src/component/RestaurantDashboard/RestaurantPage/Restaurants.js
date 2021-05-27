@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import ResIMG from '../../../assets/restaurant.jpg';
 import Table from '@material-ui/core/Table';
@@ -9,9 +9,15 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import './Restaurant.css';
+
 
 
 export class Restaurants extends Component {
+
     state = {
         restaurants: [
             {
@@ -31,9 +37,19 @@ export class Restaurants extends Component {
                 restaurantName: 'Restaurant Test3',
                 dateCreated: '10/10/2013',
                 location: 'Bregu Diellit'
-            },
-        ]
+            }
+        ],
+        
+        setOpen: false
     }
+
+    handleOpen = () => {
+        this.setState({setOpen: true});
+    };
+    
+    handleClose = () => {
+        this.setState({setOpen: false});
+    };
 
     render() {
         return (
@@ -59,10 +75,10 @@ export class Restaurants extends Component {
                                     <TableCell><strong>{res.location}</strong></TableCell>
                                     <TableCell>
                                         {/* action buttons*/}
-                                        <Button variant="contained" color="primary" style={{marginRight:'10px'}}>
+                                        <Button variant="contained" color="primary" style={{marginRight:'10px'}} onClick={this.handleOpen}>
                                             Edit
                                         </Button>
-                                        <Button variant="contained" color="secondary">
+                                        <Button variant="contained" color="secondary" >
                                             Delete
                                         </Button>
                                     </TableCell>
@@ -71,6 +87,26 @@ export class Restaurants extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
+
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    className="modal"
+                    open={this.state.setOpen}
+                    onClose={this.handleClose}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 500,
+                    }}
+                >
+                    <Fade in={this.state.setOpen} >
+                        <div className="open">
+                            <h2 id="transition-modal-title">Edit Restaurant</h2>
+                            <p id="transition-modal-description">Form coming soon</p>
+                        </div>
+                    </Fade>
+                </Modal>
             </div>
         )
     }

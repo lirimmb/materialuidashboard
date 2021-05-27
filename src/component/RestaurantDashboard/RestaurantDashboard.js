@@ -6,7 +6,7 @@ import Restaurants from './RestaurantPage/Restaurants';
 import Stats from './StatisticsPage/Stats';
 import Notifications from './NotificationsPage/Notifications'
 import Profile from './ProfilePage/Profile';
-import './Restaurant.css'
+import './RestaurantDashboard.css'
 
 export class RestaurantDashboard extends Component {
     render() {
